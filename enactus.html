@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="icon website" href="e.png">
+    <title>Club inalgora- Espace des Clubs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff53d;
+        }
+
+        /* Header du Club */
+        .club-header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 80px 30px 50px;
+            text-align: center;
+        }
+
+        .club-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border: 5px solid ;
+        }
+
+        .club-header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .club-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+        }
+
+        /* Réseaux sociaux */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #fff53d;
+            color: rgb(255, 255, 255);
+            margin: 0 8px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #ffd950;
+            color: #000000;
+            transform: translateY(-3px);
+        }
+
+        /* Contenu principal */
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .club-description {
+            background-color: rgb(255, 255, 255);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .club-description p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .club-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .info-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .info-card i {
+            font-size: 40px;
+            color: #f5ef38;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Formulaire d'inscription */
+        .inscription-section {
+            background-color: #fff53d;
+            padding: 60px 20px;
+            margin-top: 50px;
+        }
+
+        .inscription-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgb(255, 255, 255);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d3d60c;
+            box-shadow: 0 0 5px rgba(255, 244, 30, 0.5);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #fff52d;
+            color: rgb(0, 0, 0);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #eded47;
+            color: rgb(14, 11, 11);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(149, 83, 2, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .club-header {
+                padding: 60px 20px 40px;
+            }
+            
+            .club-header h1 {
+                font-size: 32px;
+            }
+            
+            .club-description {
+                padding: 25px;
+            }
+            
+            .inscription-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header du Club -->
+    <header class="club-header">
+        <img src="les_images/enactus.png" alt="Club Enactus" />
+        <h1>CLUB ENACTUS</h1>
+        <p>Explorez votre passion concernt le monde de la technologie et l'intelligence artificielle .</p>
+        
+        <!-- Réseaux sociaux -->
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-soundcloud"></i></a>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <h2 class="section-title">À Propos de Notre Club</h2>
+        
+        <div class="club-description">
+            <p>Le Club de Musique est un espace dédié à tous les passionnés de musique souhaitant développer leurs talents et partager leur amour pour cet art universel. Fondé en 2015, notre club accueille des musiciens de tous niveaux, du débutant complet au musicien confirmé.</p>
+            
+            <p>Notre mission est de créer un environnement stimulant où chacun peut explorer différents styles musicaux, apprendre de nouvelles techniques, collaborer avec d'autres musiciens et se produire lors d'événements divers. Nous croyons fermement que la musique est un puissant vecteur d'expression personnelle et de connexion sociale.</p>
+            
+            <p>Que vous soyez intéressé par la musique classique, le jazz, le rock, la pop, le hip-hop ou toute autre genre musical, vous trouverez votre place au sein de notre communauté diversifiée et passionnée. Nous disposons d'équipements professionnels et d'espaces de répétition adaptés pour permettre à chacun de s'épanouir musicalement.</p>
+        </div>
+
+        <h2 class="section-title">Événement prochaine :</h2>
+        <div class="club-info-grid">
+            <!-- Carte d'info 1 -->
+            <div class="info-card">
+                <i class="fas fa-calendar"></i>
+                <h3>Horaires</h3>
+                <p>mardi,mercredi et vendredi<br>08h30 - 18h00</p>
+            </div>
+            
+            <!-- Carte d'info 2 -->
+            <div class="info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Lieu</h3>
+                <p>les salle d'informatique<br>Faculte polydisciplinaire de taroudant</p>
+            </div>
+            
+            <!-- Carte d'info 3 -->
+            <div class="info-card">
+                <i class="fas fa-users"></i>
+                <h3>Membres</h3>
+                <p>Ouvert à tous<br>Débutants bienvenus</p>
+            </div>
+            
+            <!-- Carte d'info 4 -->
+            <div class="info-card">
+                <i class="fas fa-music"></i>
+                <h3>Activités</h3>
+                <p>Cours, Jam sessions, Concerts, Ateliers de composition</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Section d'inscription -->
+    <section class="inscription-section">
+        <h2 class="section-title">Rejoignez Notre Club</h2>
+        
+        <div class="inscription-form">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="niveau">Niveau musical</label>
+                    <select id="niveau" name="niveau" required>
+                        <option value="">Sélectionner votre niveau</option>
+                        <option value="debutant">Débutant</option>
+                        <option value="intermediaire">Intermédiaire</option>
+                        <option value="avance">Avancé</option>
+                        <option value="professionnel">Professionnel</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="instrument">Instrument principal</label>
+                    <input type="text" id="instrument" name="instrument" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message (optionnel)</label>
+                    <textarea id="message" name="message" placeholder="Parlez-nous de votre expérience musicale, vos attentes, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="btn">S'inscrire au club</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Club de Musique - Espace des Clubs</p>
+        <p>Pour plus d'informations, contactez-nous à <a href="mailto:musique@espacedesclubs.com">musique@espacedesclubs.com</a></p>
+        <p><a href="hi.html">Retour à la page d'accueil</a></p>
+    </footer>
+</body>
+</html>
